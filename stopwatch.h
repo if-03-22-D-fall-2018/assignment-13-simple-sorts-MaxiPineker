@@ -40,7 +40,6 @@
   void start_stopwatch();
   float elapsed_time();
   void stop_stopwatch();
-  void clock();
 
 
 #endif
