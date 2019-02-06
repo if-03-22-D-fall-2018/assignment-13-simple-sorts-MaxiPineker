@@ -18,18 +18,17 @@
 void bubble_sort(int small_array[], int length)
 {
   bool isSwapped = false;
-	do{
-		isSwapped = false;
-
-		for(unsigned long i = 0; i < length-1; i++){
-			if(small_array[i] > small_array[i+1]){
-				int tmp = small_array[i];
-				small_array[i] = small_array[i+1];
-				small_array[i+1] = tmp;
-				isSwapped = true;
-			}
-		}
-	}while(isSwapped);
+  do {
+    isSwapped = false;
+    for (unsigned long i = 0; i < length-1; i++) {
+      if (small_array[i+1] < small_array[i]) {
+        int temp = small_array[i+1];
+        small_array[i+1] = small_array[i];
+        small_array[i] = temp;
+        isSwapped = true;
+      }
+    }
+  } while(isSwapped);
 }
 void insertion_sort(int small_array[], int length)
 {

@@ -11,16 +11,19 @@
  *-----------------------------------------------------------------------------
 */
 #include "stopwatch.h"
+#include <time.h>
 
-void start_stopwatch()
-{
+float begin;    //global variable for the begin of the process
+float end;     //global variable for the end of the process
 
+void start_stopwatch(){
+    begin = clock();
 }
-float elapsed_time()
-{
-
+float elapsed_time(){
+    if(end < begin)
+        return (clock() - begin) / CLOCKS_PER_SEC;
+    return (end - begin) / CLOCKS_PER_SEC;
 }
-void stop_stopwatch()
-{
-
+void stop_stopwatch(){
+    end = clock();
 }
